@@ -1,7 +1,7 @@
 cls
 git add .
 
-git commit -m "Fully integrated with local redis"
+git commit -m "Creating an email process"
 
 
 echo Enviando dados para o bitbucket
