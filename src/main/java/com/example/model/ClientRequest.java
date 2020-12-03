@@ -1,14 +1,15 @@
 package com.example.model;
 
-public class CallCenterRequest {
+public class ClientRequest {
 
     private String docNumber;
     private String email;
     private String fileName;
     private String clientName;
     private String protocol;
+    private String requestDate;
 
-    public CallCenterRequest(){
+    public ClientRequest(){
 
     }
 
@@ -50,5 +51,13 @@ public class CallCenterRequest {
 
     public void setProtocol(String protocol) {
         this.protocol = protocol;
+    }
+
+    public String getRequestDate() {
+        return requestDate;
+    }
+
+    public void setRequestDate(String requestDate) {
+        this.requestDate = requestDate;
     }
 }

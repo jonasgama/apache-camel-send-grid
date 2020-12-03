@@ -1,7 +1,7 @@
 cls
 git add .
 
-git commit -m "Creating an email process"
+git commit -m "Send grid implementation and template config"
 
 
 echo Enviando dados para o bitbucket

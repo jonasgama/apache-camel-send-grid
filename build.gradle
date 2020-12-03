@@ -24,8 +24,13 @@ dependencies {
 	implementation "org.apache.camel.springboot:camel-spring-boot-starter:$camelVersion"
 	//dataformats
 	implementation "org.apache.camel:camel-gson:$camelVersion"
+	//sendgrid
+	implementation "com.sendgrid:sendgrid-java:4.1.2"
 
-	
+	//general libs
+	implementation "org.apache.commons:commons-lang3:3.9"
+	implementation "commons-io:commons-io:2.6"
+
 	//tests
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

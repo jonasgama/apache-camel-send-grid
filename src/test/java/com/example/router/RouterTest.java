@@ -1,12 +1,9 @@
 package com.example.router;
 
 import com.example.SpringApp;
-import com.example.model.CallCenterRequest;
+import com.example.model.ClientRequest;
 import com.google.gson.Gson;
-import org.apache.camel.EndpointInject;
 import org.apache.camel.ProducerTemplate;
-import org.apache.camel.component.mock.MockEndpoint;
-import org.apache.camel.test.spring.MockEndpoints;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,19 +30,11 @@ public class RouterTest {
     @Test
     public void shouldSendMail(){
         producerTemplate.sendBody(env.getProperty("route.from"), jsonInput());
-        producerTemplate.sendBody(env.getProperty("route.from"), jsonInput2());
     }
 
     private String jsonInput(){
-        CallCenterRequest callCenterRequest = new CallCenterRequest();
+        ClientRequest callCenterRequest = new ClientRequest();
         callCenterRequest.setFileName("sample.pdf");
         return new Gson().toJson(callCenterRequest);
     }
-
-    private String jsonInput2(){
-        CallCenterRequest callCenterRequest = new CallCenterRequest();
-        callCenterRequest.setFileName("sample - Copia.pdf");
-        return new Gson().toJson(callCenterRequest);
-    }
-
 }
