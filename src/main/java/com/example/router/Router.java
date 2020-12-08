@@ -8,7 +8,6 @@ import org.apache.camel.model.dataformat.JsonLibrary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import java.io.File;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
@@ -44,8 +43,9 @@ public class Router extends RouteBuilder {
                 .unmarshal()
                 .json(JsonLibrary.Gson, ClientRequest.class)
                 .pollEnrich("{{file.path}}=${body.fileName}{{noop.config}}", timeout, emailAggregate)
-                .convertBodyTo(File.class)
-                .log("${body}");
+                .marshal()
+                .json(JsonLibrary.Gson)
+                .log("Email has been sent: ${body}");
 
     }
 
