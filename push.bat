@@ -1,7 +1,7 @@
 cls
 git add .
 
-git commit -m "From and To nodes delivering an e-mail with attachment and body"
+git commit -m "Kafka Config and readme"
 
 
 echo Enviando dados para o bitbucket
